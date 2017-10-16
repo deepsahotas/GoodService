@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Assignment</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+<body>
+  <header>
+    <div class="logo">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="javascript:void(0);">GoodService</a>
+        <div class="mob-search"><span class="sprite search mobilesearch"></span></div>
+    </div>
+    <div class="searchBar">
+      <div class="searchDiv">
+        <span class="sprite search"></span>
+        <input list="candidate" placeholder="Search Candidate"/>
+        <datalist id="candidate">
+          <option value="Pardeep">
+          <option value="Vipil">
+          <option value="Vipin">
+          <option value="Priyanshi">
+          <option value="Priyanka">
+          <option value="vijay">
+          <option value="ram">
+          <option value="rajiv">
+          <option value="rozy">
+          <option value="nitin">
+        </datalist>
+        <div class="location">
+          <span class="loc">Location :</span>
+          <a id="select-location">Anywhere <span class="sprite downarrow"></span></a>
+          <ul class="city-dropdown">
+            <li>New Delhi</li>
+            <li>Mumbai</li>
+            <li>Kolkatta</li>
+            <li>Goa</li>
+            <li>Hydrabad</li>
+            <li>Banglore</li>
+            <li>Pune</li>
+          </ul>
+        </div>
+        <button>Advance Search</button>
+        <div class="loggedInuser">
+          <p>Pradeep</p>
+          <img src="images/mypic.jpg">
+          <span class="sprite downarrow loogedarrow"></span>
+        </div>
+      </div>
+    </div>
+  </header>
+<div class="content-wrapper">
+  <div class="left-panel">
+    <div class="menu-links">
+      <div class="menus">
+        <h2>Jobs</h2>
+        <ul>
+          <li><a href="javascript:void(0);">- Post New</a>
+          <li><a href="javascript:void(0);">- View All Jobs</a>
+        </ul>
+      </div>
+      <div class="menus">
+        <h2>Job Applications</h2>
+        <ul>
+          <li><a href="javascript:void(0);">- All my applications</a>
+          <li><a href="javascript:void(0);">- job 1 Apps</a>
+          <li><a href="javascript:void(0);">- job 2 Apps</a>
+          <li><a href="javascript:void(0);">- job 3 Apps</a>
+        </ul>
+      </div>
+      <div class="menus">
+        <h2>people database</h2>
+      </div>
+      <div class="menus">
+        <h2>Settings</h2>
+        <ul>
+          <li><a href="javascript:void(0);">- my team</a>
+          <li><a href="javascript:void(0);">- interview stages</a>
+          <li><a href="javascript:void(0);">- Company profile</a>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="right-panel">
+    <div class="filter-div">
+      <div class="filter-checkbox">
+        <input type="checkbox" id="filters" name="filter-checks">
+        <label for="filters"></label><span class="sprite downarrow filterarrow"></span>
+      </div>
+      <div class="filter-checkbox invite-tag">
+        <p>Invite to job v</p>
+      </div>
+      <div class="filter-checkbox invite-tag withicon">
+        <span class="sprite share"></span>
+        <p>Share v</p>
+      </div>
+      <div class="filter-checkbox invite-tag withicon">
+        <span class="sprite moveto"></span>
+        <p>Move to v</p>
+      </div>
+    </div>
+    <div class="candidate-listing">
+      <div class="listing">
+        <div class="name">&nbsp;</div>
+        <div class="company">Companies</div>
+        <div class="role">Role</div>
+        <div class="exp">Exp.</div>
+        <div class="ctc">CTC</div>
+      </div>
+      <div class="listing">
+        <div class="name">
+          <div class="listing-checkbox">
+            <input type="checkbox" id="listing-filters1" name="listing-filters">
+            <label for="listing-filters1"></label>
+          </div>
+          <div class="name-details">
+            <p>Bhanu Singh</p>
+            <span>Delhi</span>
+          </div>
+        </div>
+        <div class="company">
+          <p>Efficient Bazaar</p>
+          <p>Kellton Tech</p>
+        </div>
+        <div class="role">
+          <p>Software Test engineer</p>
+        </div>
+        <div class="exp">
+          <p>2 yrs</p>
+        </div>
+        <div class="ctc">
+          <p>3.2L
+        </div>
+        <div class="rest-details">
+          <p><span>2 Invites</span><span>Applied 5 Jobs | <a href="javascript:void(0);">View Resume</a></span> Hospitality, Pipeline Manager</p>
+          <a class="messagebtn" href="javascript:void(0);">Message ></a>
+        </div>
+      </div>
+      <div class="listing">
+        <div class="name">
+          <div class="listing-checkbox">
+            <input type="checkbox" id="listing-filters2" name="listing-filters">
+            <label for="listing-filters2"></label>
+          </div>
+          <div class="name-details">
+            <p>Bhanu Singh</p>
+            <span>Delhi</span>
+          </div>
+        </div>
+        <div class="company">
+          <p>Efficient Bazaar</p>
+          <p>Kellton Tech</p>
+        </div>
+        <div class="role">
+          <p>Software Test engineer</p>
+        </div>
+        <div class="exp">
+          <p>2 yrs</p>
+        </div>
+        <div class="ctc">
+          <p>3.2L
+        </div>
+        <div class="rest-details">
+          <p><span>2 Invites</span><span>Applied 5 Jobs | <a href="javascript:void(0);">View Resume</a></span> Hospitality, Pipeline Manager</p>
+          <a class="messagebtn" href="javascript:void(0);">Message ></a>
+        </div>
+      </div>
+      <div class="listing">
+        <div class="name">
+          <div class="listing-checkbox">
+            <input type="checkbox" id="listing-filters3" name="listing-filters">
+            <label for="listing-filters3"></label>
+          </div>
+          <div class="name-details">
+            <p>Bhanu Singh</p>
+            <span>Delhi</span>
+          </div>
+        </div>
+        <div class="company">
+          <p>Efficient Bazaar</p>
+          <p>Kellton Tech</p>
+        </div>
+        <div class="role">
+          <p>Software Test engineer</p>
+        </div>
+        <div class="exp">
+          <p>2 yrs</p>
+        </div>
+        <div class="ctc">
+          <p>3.2L
+        </div>
+        <div class="rest-details">
+          <p><span>2 Invites</span><span>Applied 5 Jobs | <a href="javascript:void(0);">View Resume</a></span> Hospitality, Pipeline Manager</p>
+          <a class="messagebtn" href="javascript:void(0);">Message ></a>
+        </div>
+      </div>
+      <div class="listing">
+        <div class="name">
+          <div class="listing-checkbox">
+            <input type="checkbox" id="listing-filters4" name="listing-filters">
+            <label for="listing-filters4"></label>
+          </div>
+          <div class="name-details">
+            <p>Bhanu Singh</p>
+            <span>Delhi</span>
+          </div>
+        </div>
+        <div class="company">
+          <p>Efficient Bazaar</p>
+          <p>Kellton Tech</p>
+        </div>
+        <div class="role">
+          <p>Software Test engineer</p>
+        </div>
+        <div class="exp">
+          <p>2 yrs</p>
+        </div>
+        <div class="ctc">
+          <p>3.2L
+        </div>
+        <div class="rest-details">
+          <p><span>2 Invites</span><span>Applied 5 Jobs | <a href="javascript:void(0);">View Resume</a></span> Hospitality, Pipeline Manager</p>
+          <a class="messagebtn" href="javascript:void(0);">Message ></a>
+        </div>
+      </div>
+      <div class="listing">
+        <div class="name">
+          <div class="listing-checkbox">
+            <input type="checkbox" id="listing-filters5" name="listing-filters">
+            <label for="listing-filters5"></label>
+          </div>
+          <div class="name-details">
+            <p>Bhanu Singh</p>
+            <span>Delhi</span>
+          </div>
+        </div>
+        <div class="company">
+          <p>Efficient Bazaar</p>
+          <p>Kellton Tech</p>
+        </div>
+        <div class="role">
+          <p>Software Test engineer</p>
+        </div>
+        <div class="exp">
+          <p>2 yrs</p>
+        </div>
+        <div class="ctc">
+          <p>3.2L
+        </div>
+        <div class="rest-details">
+          <p><span>2 Invites</span><span>Applied 5 Jobs | <a href="javascript:void(0);">View Resume</a></span> Hospitality, Pipeline Manager</p>
+          <a class="messagebtn" href="javascript:void(0);">Message ></a>
+        </div>
+      </div>
+      <div class="listing">
+        <div class="name">
+          <div class="listing-checkbox">
+            <input type="checkbox" id="listing-filters6" name="listing-filters">
+            <label for="listing-filters6"></label>
+          </div>
+          <div class="name-details">
+            <p>Bhanu Singh</p>
+            <span>Delhi</span>
+          </div>
+        </div>
+        <div class="company">
+          <p>Efficient Bazaar</p>
+          <p>Kellton Tech</p>
+        </div>
+        <div class="role">
+          <p>Software Test engineer</p>
+        </div>
+        <div class="exp">
+          <p>2 yrs</p>
+        </div>
+        <div class="ctc">
+          <p>3.2L
+        </div>
+        <div class="rest-details">
+          <p><span>2 Invites</span><span>Applied 5 Jobs | <a href="javascript:void(0);">View Resume</a></span> Hospitality, Pipeline Manager</p>
+          <a class="messagebtn" href="javascript:void(0);">Message ></a>
+        </div>
+      </div>
+      <div class="listing">
+        <div class="name">
+          <div class="listing-checkbox">
+            <input type="checkbox" id="listing-filters7" name="listing-filters">
+            <label for="listing-filters7"></label>
+          </div>
+          <div class="name-details">
+            <p>Bhanu Singh</p>
+            <span>Delhi</span>
+          </div>
+        </div>
+        <div class="company">
+          <p>Efficient Bazaar</p>
+          <p>Kellton Tech</p>
+        </div>
+        <div class="role">
+          <p>Software Test engineer</p>
+        </div>
+        <div class="exp">
+          <p>2 yrs</p>
+        </div>
+        <div class="ctc">
+          <p>3.2L
+        </div>
+        <div class="rest-details">
+          <p><span>2 Invites</span><span>Applied 5 Jobs | <a href="javascript:void(0);">View Resume</a></span> Hospitality, Pipeline Manager</p>
+          <a class="messagebtn" href="javascript:void(0);">Message ></a>
+        </div>
+      </div>
+      <div class="listing">
+        <div class="name">
+          <div class="listing-checkbox">
+            <input type="checkbox" id="listing-filters8" name="listing-filters">
+            <label for="listing-filters8"></label>
+          </div>
+          <div class="name-details">
+            <p>Bhanu Singh</p>
+            <span>Delhi</span>
+          </div>
+        </div>
+        <div class="company">
+          <p>Efficient Bazaar</p>
+          <p>Kellton Tech</p>
+        </div>
+        <div class="role">
+          <p>Software Test engineer</p>
+        </div>
+        <div class="exp">
+          <p>2 yrs</p>
+        </div>
+        <div class="ctc">
+          <p>3.2L
+        </div>
+        <div class="rest-details">
+          <p><span>2 Invites</span><span>Applied 5 Jobs | <a href="javascript:void(0);">View Resume</a></span> Hospitality, Pipeline Manager</p>
+          <a class="messagebtn" href="javascript:void(0);">Message ></a>
+        </div>
+      </div>
+      <div class="listing">
+        <div class="name">
+          <div class="listing-checkbox">
+            <input type="checkbox" id="listing-filters9" name="listing-filters">
+            <label for="listing-filters9"></label>
+          </div>
+          <div class="name-details">
+            <p>Bhanu Singh</p>
+            <span>Delhi</span>
+          </div>
+        </div>
+        <div class="company">
+          <p>Efficient Bazaar</p>
+          <p>Kellton Tech</p>
+        </div>
+        <div class="role">
+          <p>Software Test engineer</p>
+        </div>
+        <div class="exp">
+          <p>2 yrs</p>
+        </div>
+        <div class="ctc">
+          <p>3.2L
+        </div>
+        <div class="rest-details">
+          <p><span>2 Invites</span><span>Applied 5 Jobs | <a href="javascript:void(0);">View Resume</a></span> Hospitality, Pipeline Manager</p>
+          <a class="messagebtn" href="javascript:void(0);">Message ></a>
+        </div>
+      </div>
+      <div class="listing">
+        <div class="name">
+          <div class="listing-checkbox">
+            <input type="checkbox" id="listing-filters10" name="listing-filters">
+            <label for="listing-filters10"></label>
+          </div>
+          <div class="name-details">
+            <p>Bhanu Singh</p>
+            <span>Delhi</span>
+          </div>
+        </div>
+        <div class="company">
+          <p>Efficient Bazaar</p>
+          <p>Kellton Tech</p>
+        </div>
+        <div class="role">
+          <p>Software Test engineer</p>
+        </div>
+        <div class="exp">
+          <p>2 yrs</p>
+        </div>
+        <div class="ctc">
+          <p>3.2L
+        </div>
+        <div class="rest-details">
+          <p><span>2 Invites</span><span>Applied 5 Jobs | <a href="javascript:void(0);">View Resume</a></span> Hospitality, Pipeline Manager</p>
+          <a class="messagebtn" href="javascript:void(0);">Message ></a>
+        </div>
+      </div>
+      <div class="listing">
+        <div class="name">
+          <div class="listing-checkbox">
+            <input type="checkbox" id="listing-filters11" name="listing-filters">
+            <label for="listing-filters11"></label>
+          </div>
+          <div class="name-details">
+            <p>Bhanu Singh</p>
+            <span>Delhi</span>
+          </div>
+        </div>
+        <div class="company">
+          <p>Efficient Bazaar</p>
+          <p>Kellton Tech</p>
+        </div>
+        <div class="role">
+          <p>Software Test engineer</p>
+        </div>
+        <div class="exp">
+          <p>2 yrs</p>
+        </div>
+        <div class="ctc">
+          <p>3.2L
+        </div>
+        <div class="rest-details">
+          <p><span>2 Invites</span><span>Applied 5 Jobs | <a href="javascript:void(0);">View Resume</a></span> Hospitality, Pipeline Manager</p>
+          <a class="messagebtn" href="javascript:void(0);">Message ></a>
+        </div>
+      </div>
+      <div class="listing">
+        <div class="name">
+          <div class="listing-checkbox">
+            <input type="checkbox" id="listing-filters12" name="listing-filters">
+            <label for="listing-filters12"></label>
+          </div>
+          <div class="name-details">
+            <p>Bhanu Singh</p>
+            <span>Delhi</span>
+          </div>
+        </div>
+        <div class="company">
+          <p>Efficient Bazaar</p>
+          <p>Kellton Tech</p>
+        </div>
+        <div class="role">
+          <p>Software Test engineer</p>
+        </div>
+        <div class="exp">
+          <p>2 yrs</p>
+        </div>
+        <div class="ctc">
+          <p>3.2L
+        </div>
+        <div class="rest-details">
+          <p><span>2 Invites</span><span>Applied 5 Jobs | <a href="javascript:void(0);">View Resume</a></span> Hospitality, Pipeline Manager</p>
+          <a class="messagebtn" href="javascript:void(0);">Message ></a>
+        </div>
+      </div>
+      <div class="listing">
+        <div class="name">
+          <div class="listing-checkbox">
+            <input type="checkbox" id="listing-filters13" name="listing-filters">
+            <label for="listing-filters13"></label>
+          </div>
+          <div class="name-details">
+            <p>Bhanu Singh</p>
+            <span>Delhi</span>
+          </div>
+        </div>
+        <div class="company">
+          <p>Efficient Bazaar</p>
+          <p>Kellton Tech</p>
+        </div>
+        <div class="role">
+          <p>Software Test engineer</p>
+        </div>
+        <div class="exp">
+          <p>2 yrs</p>
+        </div>
+        <div class="ctc">
+          <p>3.2L
+        </div>
+        <div class="rest-details">
+          <p><span>2 Invites</span><span>Applied 5 Jobs | <a href="javascript:void(0);">View Resume</a></span> Hospitality, Pipeline Manager</p>
+          <a class="messagebtn" href="javascript:void(0);">Message ></a>
+        </div>
+      </div>
+      <div class="listing">
+        <div class="name">
+          <div class="listing-checkbox">
+            <input type="checkbox" id="listing-filters14" name="listing-filters">
+            <label for="listing-filters14"></label>
+          </div>
+          <div class="name-details">
+            <p>Bhanu Singh</p>
+            <span>Delhi</span>
+          </div>
+        </div>
+        <div class="company">
+          <p>Efficient Bazaar</p>
+          <p>Kellton Tech</p>
+        </div>
+        <div class="role">
+          <p>Software Test engineer</p>
+        </div>
+        <div class="exp">
+          <p>2 yrs</p>
+        </div>
+        <div class="ctc">
+          <p>3.2L
+        </div>
+        <div class="rest-details">
+          <p><span>2 Invites</span><span>Applied 5 Jobs | <a href="javascript:void(0);">View Resume</a></span> Hospitality, Pipeline Manager</p>
+          <a class="messagebtn" href="javascript:void(0);">Message ></a>
+        </div>
+      </div>
+      <div class="listing">
+        <div class="name">
+          <div class="listing-checkbox">
+            <input type="checkbox" id="listing-filters15" name="listing-filters">
+            <label for="listing-filters15"></label>
+          </div>
+          <div class="name-details">
+            <p>Bhanu Singh</p>
+            <span>Delhi</span>
+          </div>
+        </div>
+        <div class="company">
+          <p>Efficient Bazaar</p>
+          <p>Kellton Tech</p>
+        </div>
+        <div class="role">
+          <p>Software Test engineer</p>
+        </div>
+        <div class="exp">
+          <p>2 yrs</p>
+        </div>
+        <div class="ctc">
+          <p>3.2L
+        </div>
+        <div class="rest-details">
+          <p><span>2 Invites</span><span>Applied 5 Jobs | <a href="javascript:void(0);">View Resume</a></span> Hospitality, Pipeline Manager</p>
+          <a class="messagebtn" href="javascript:void(0);">Message ></a>
+        </div>
+      </div>
+      <div class="listing">
+        <div class="name">
+          <div class="listing-checkbox">
+            <input type="checkbox" id="listing-filters16" name="listing-filters">
+            <label for="listing-filters16"></label>
+          </div>
+          <div class="name-details">
+            <p>Bhanu Singh</p>
+            <span>Delhi</span>
+          </div>
+        </div>
+        <div class="company">
+          <p>Efficient Bazaar</p>
+          <p>Kellton Tech</p>
+        </div>
+        <div class="role">
+          <p>Software Test engineer</p>
+        </div>
+        <div class="exp">
+          <p>2 yrs</p>
+        </div>
+        <div class="ctc">
+          <p>3.2L
+        </div>
+        <div class="rest-details">
+          <p><span>2 Invites</span><span>Applied 5 Jobs | <a href="javascript:void(0);">View Resume</a></span> Hospitality, Pipeline Manager</p>
+          <a class="messagebtn" href="javascript:void(0);">Message ></a>
+        </div>
+      </div>
+      <div class="listing">
+        <div class="name">
+          <div class="listing-checkbox">
+            <input type="checkbox" id="listing-filters17" name="listing-filters">
+            <label for="listing-filters17"></label>
+          </div>
+          <div class="name-details">
+            <p>Bhanu Singh</p>
+            <span>Delhi</span>
+          </div>
+        </div>
+        <div class="company">
+          <p>Efficient Bazaar</p>
+          <p>Kellton Tech</p>
+        </div>
+        <div class="role">
+          <p>Software Test engineer</p>
+        </div>
+        <div class="exp">
+          <p>2 yrs</p>
+        </div>
+        <div class="ctc">
+          <p>3.2L
+        </div>
+        <div class="rest-details">
+          <p><span>2 Invites</span><span>Applied 5 Jobs | <a href="javascript:void(0);">View Resume</a></span> Hospitality, Pipeline Manager</p>
+          <a class="messagebtn" href="javascript:void(0);">Message ></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script>
+    $("#select-location").click(function(){
+      $(".location").toggleClass("dropdown");
+    });
+    $(".city-dropdown li").click(function(){
+      $(".location").removeClass("dropdown");
+    });
+    $(".navbar-toggle").click(function(){
+      $(".left-panel").toggle();
+      $("body").css('overflow','hidden');
+    });
+    $(".mob-search").click(function(){
+      $(".searchBar").toggle();
+    });
+  </script>
+</body>
+</html>

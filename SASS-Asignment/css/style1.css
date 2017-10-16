@@ -1,0 +1,545 @@
+/*---importing partial---*/
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local("Lato Light"), local("Lato-Light"), url(https://fonts.gstatic.com/s/lato/v13/kcf5uOXucLcbFOydGU24WALUuEpTyoUstqEm5AMlJo4.woff) format("woff"); }
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Lato Regular"), local("Lato-Regular"), url(https://fonts.gstatic.com/s/lato/v13/qIIYRU-oROkIk8vfvxw6QvesZW2xOQ-xsNqO47m55DA.woff) format("woff"); }
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local("Lato Bold"), local("Lato-Bold"), url(https://fonts.gstatic.com/s/lato/v13/qdgUG4U09HnJwhYI-uK18wLUuEpTyoUstqEm5AMlJo4.woff) format("woff"); }
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 900;
+  src: local("Lato Black"), local("Lato-Black"), url(https://fonts.gstatic.com/s/lato/v13/G2uphNnNqGFMHLRsO_72ngLUuEpTyoUstqEm5AMlJo4.woff) format("woff"); }
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 400;
+  src: local("Lato Italic"), local("Lato-Italic"), url(https://fonts.gstatic.com/s/lato/v13/RYyZNoeFgb0l7W3Vu1aSWOvvDin1pK8aKteLpeZ5c0A.woff) format("woff"); }
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video, input, a, button, textarea, select {
+  margin: 0;
+  padding: 0;
+  border: 0 none;
+  outline: 0;
+  background: transparent;
+  font-size: 100%;
+  vertical-align: baseline;
+  font-family: 'Lato', sans-serif !important; }
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none; }
+
+.smooth {
+  transition: all 0.7s;
+  -ms-transition: all 0.7s;
+  -moz-transition: all 0.7s;
+  -ms-transition: all 0.7s;
+  -webkit-transition: all 0.7s; }
+
+html {
+  font-size: 14px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+img[alt] {
+  font-size: 10px;
+  font-weight: 300; }
+
+body {
+  font-size: 14px;
+  line-height: 18px;
+  color: #2B2B2B;
+  background-color: #FFFFFF; }
+
+img, svg {
+  max-width: 100%; }
+
+.greyscale {
+  -webkit-filter: grayscale(100%);
+  /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%); }
+
+.sprite {
+  background: url("../images/sprite.png") no-repeat top left;
+  width: 16px;
+  height: 16px;
+  display: inline-block; }
+
+.sprite.downarrow {
+  background-position: 0 0;
+  position: absolute;
+  top: 2px;
+  right: -4px;
+  transition: .2s ease-in-out; }
+
+.sprite.moveto {
+  background-position: 0 -26px;
+  position: absolute;
+  left: 10px;
+  top: 8px; }
+
+.sprite.rightarrow {
+  background-position: 0 -52px; }
+
+.sprite.search {
+  background-position: 0 -78px;
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  opacity: 0.5; }
+
+.sprite.share {
+  background-position: 0 -104px;
+  width: 14px;
+  position: absolute;
+  left: 15px;
+  top: 8px; }
+
+/*---importing partial---*/
+body {
+  font: 100% Lato;
+  color: #333;
+  font-weight: 400; }
+
+p {
+  margin: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0; }
+
+header {
+  border-bottom: 1px solid #ccc;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 4;
+  width: 100%;
+  background: #f2f2f2; }
+  header .logo {
+    float: left;
+    width: 18%;
+    text-align: center;
+    padding: 13px; }
+    header .logo a {
+      color: #333;
+      font-weight: bold;
+      font-size: 32px;
+      text-decoration: none; }
+    header .logo a:hover {
+      text-decoration: none; }
+  header .searchBar {
+    float: right;
+    width: 82%;
+    padding: 13px; }
+    header .searchBar .searchDiv {
+      position: relative; }
+      header .searchBar .searchDiv input {
+        border: 1px solid #ccc;
+        padding: 10px;
+        width: 50%;
+        padding-left: 32px;
+        float: left;
+        border-right: none;
+        background: #fff;
+        box-shadow: 0 2px 3px #ccc; }
+      header .searchBar .searchDiv .location {
+        display: inline-block;
+        border: 1px solid #ccc;
+        padding: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        float: left;
+        width: 18%;
+        background: #fff;
+        box-shadow: 1px 2px 3px #ccc; }
+        header .searchBar .searchDiv .location a {
+          color: #20a397;
+          float: right;
+          padding-right: 15px;
+          position: relative;
+          cursor: pointer; }
+        header .searchBar .searchDiv .location .city-dropdown {
+          margin: 10px -15px 0;
+          display: none;
+          width: 100%;
+          max-width: 186px;
+          background: #fff;
+          border: 1px solid #ccc;
+          box-shadow: 1px 2px 3px #ccc;
+          position: absolute;
+          border-top: none; }
+          header .searchBar .searchDiv .location .city-dropdown li {
+            display: block;
+            padding: 7px;
+            padding-left: 15px;
+            cursor: pointer; }
+          header .searchBar .searchDiv .location .city-dropdown li:hover {
+            background: #20a397;
+            color: #fff; }
+        header .searchBar .searchDiv .location a:hover {
+          text-decoration: none; }
+      header .searchBar .searchDiv .location.dropdown a span.downarrow {
+        transform: rotate(180deg); }
+      header .searchBar .searchDiv .location.dropdown .city-dropdown {
+        display: block; }
+      header .searchBar .searchDiv button {
+        background: #20a397;
+        color: #fff;
+        display: inline-block;
+        padding: 10px 25px;
+        font-size: 15px;
+        padding-bottom: 11px;
+        box-shadow: 0px 2px 3px #ccc; }
+      header .searchBar .searchDiv .loggedInuser {
+        float: right;
+        padding: 2px;
+        padding-right: 15px;
+        cursor: pointer; }
+        header .searchBar .searchDiv .loggedInuser p {
+          display: inline-block;
+          float: left;
+          margin: 10px 4px 0 0;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          width: 62px;
+          padding-right: 10px;
+          overflow: hidden; }
+        header .searchBar .searchDiv .loggedInuser img {
+          width: 40px;
+          height: 40px;
+          -webkit-border-radius: 100%;
+          -moz-border-radius: 100%;
+          -ms-border-radius: 100%;
+          border-radius: 100%;
+          border: 2px solid #ccc;
+          border-color: #fff;
+          float: right; }
+        header .searchBar .searchDiv .loggedInuser .loogedarrow {
+          top: 13px; }
+
+header::after, .content-wrapper::after, .filter-div::after, .candidate-listing::after, .listing-header::after, .listing::after {
+  content: '';
+  clear: both;
+  display: block; }
+
+.content-wrapper {
+  position: relative;
+  top: 71px; }
+  .content-wrapper .left-panel {
+    float: left; }
+    .content-wrapper .left-panel .menu-links {
+      position: fixed;
+      width: 19%;
+      height: 100%;
+      background: #f2f2f2;
+      padding: 25px;
+      border-right: 2px solid #ccc;
+      box-shadow: 0 0 3px #ccc; }
+      .content-wrapper .left-panel .menu-links .menus {
+        margin-bottom: 20px; }
+        .content-wrapper .left-panel .menu-links .menus h2 {
+          font-size: 16px;
+          font-weight: bold;
+          margin-bottom: 10px;
+          text-transform: uppercase;
+          border-bottom: 1px dotted #ccc;
+          padding-bottom: 10px; }
+        .content-wrapper .left-panel .menu-links .menus ul {
+          margin: 0 15px; }
+          .content-wrapper .left-panel .menu-links .menus ul li {
+            display: block;
+            margin: 10px 0;
+            text-transform: capitalize; }
+            .content-wrapper .left-panel .menu-links .menus ul li a {
+              color: #333;
+              text-decoration: none; }
+            .content-wrapper .left-panel .menu-links .menus ul li a:hover {
+              color: #20a397;
+              text-decoration: none; }
+
+.right-panel {
+  float: right;
+  width: 81%; }
+  .right-panel .filter-div {
+    background: #f2f2f2;
+    position: fixed;
+    width: 100%;
+    padding: 10px 15px;
+    box-shadow: 0 3px 3px #ccc;
+    z-index: 2; }
+    .right-panel .filter-div .filter-checkbox {
+      border: 1px solid #ccc;
+      -webkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      -ms-border-radius: 2px;
+      border-radius: 2px;
+      width: 6%;
+      display: inline-block;
+      margin-right: 15px;
+      background-color: transparent;
+      background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.85), rgba(247, 247, 247, 0.85));
+      background-image: linear-gradient(top, rgba(255, 255, 255, 0.85), rgba(247, 247, 247, 0.85));
+      background-image: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0.85), rgba(247, 247, 247, 0.85));
+      background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.85), rgba(247, 247, 247, 0.85));
+      padding-left: 9px;
+      padding-top: 6px;
+      padding-bottom: 2px;
+      float: left; }
+      .right-panel .filter-div .filter-checkbox input[type="checkbox"] {
+        display: none; }
+      .right-panel .filter-div .filter-checkbox p {
+        position: relative; }
+      .right-panel .filter-div .filter-checkbox .filter-checkbox:hover {
+        border-color: #333; }
+      .right-panel .filter-div .filter-checkbox label {
+        border: 1px solid #ccc;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        margin: 0 auto;
+        position: relative; }
+      .right-panel .filter-div .filter-checkbox input[type="checkbox"]:checked + label {
+        background: #20a397;
+        border-color: #20a397; }
+      .right-panel .filter-div .filter-checkbox input[type="checkbox"]:checked + label::after {
+        content: '';
+        display: inline-block;
+        height: 7px;
+        width: 2px;
+        background: #fff;
+        position: absolute;
+        left: 4px;
+        transform: rotate(-40deg);
+        top: 7px; }
+      .right-panel .filter-div .filter-checkbox input[type="checkbox"]:checked + label::before {
+        content: '';
+        display: inline-block;
+        height: 12px;
+        width: 2px;
+        background: #fff;
+        position: absolute;
+        left: 11px;
+        transform: rotate(50deg);
+        top: 2px; }
+      .right-panel .filter-div .filter-checkbox .filterarrow {
+        position: relative;
+        top: -1px;
+        right: -8px; }
+    .right-panel .filter-div .invite-tag {
+      width: 10%;
+      padding: 7px;
+      text-align: center;
+      cursor: pointer;
+      position: relative; }
+  .right-panel .candidate-listing {
+    background: #fff;
+    padding: 0 15px;
+    position: relative;
+    top: 58px;
+    z-index: 1;
+    max-height: 545px;
+    overflow-y: scroll;
+    overflow-x: hidden; }
+    .right-panel .candidate-listing .listing {
+      padding: 6px 15px;
+      margin: 0 -15px;
+      border-top: 1px solid #ccc; }
+      .right-panel .candidate-listing .listing .name, .right-panel .candidate-listing .listing .company, .right-panel .candidate-listing .listing .role {
+        width: 16%;
+        float: left; }
+        .right-panel .candidate-listing .listing .name .listing-checkbox, .right-panel .candidate-listing .listing .company .listing-checkbox, .right-panel .candidate-listing .listing .role .listing-checkbox {
+          float: left;
+          padding: 7px 10px; }
+          .right-panel .candidate-listing .listing .name .listing-checkbox input[type="checkbox"], .right-panel .candidate-listing .listing .company .listing-checkbox input[type="checkbox"], .right-panel .candidate-listing .listing .role .listing-checkbox input[type="checkbox"] {
+            display: none; }
+          .right-panel .candidate-listing .listing .name .listing-checkbox label, .right-panel .candidate-listing .listing .company .listing-checkbox label, .right-panel .candidate-listing .listing .role .listing-checkbox label {
+            border: 1px solid #ccc;
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            margin: 0 auto;
+            position: relative; }
+          .right-panel .candidate-listing .listing .name .listing-checkbox input[type="checkbox"]:checked + label, .right-panel .candidate-listing .listing .company .listing-checkbox input[type="checkbox"]:checked + label, .right-panel .candidate-listing .listing .role .listing-checkbox input[type="checkbox"]:checked + label {
+            background: #20a397;
+            border-color: #20a397; }
+          .right-panel .candidate-listing .listing .name .listing-checkbox input[type="checkbox"]:checked + label::after, .right-panel .candidate-listing .listing .company .listing-checkbox input[type="checkbox"]:checked + label::after, .right-panel .candidate-listing .listing .role .listing-checkbox input[type="checkbox"]:checked + label::after {
+            content: '';
+            display: inline-block;
+            height: 7px;
+            width: 2px;
+            background: #fff;
+            position: absolute;
+            left: 4px;
+            transform: rotate(-40deg);
+            top: 7px; }
+          .right-panel .candidate-listing .listing .name .listing-checkbox input[type="checkbox"]:checked + label::before, .right-panel .candidate-listing .listing .company .listing-checkbox input[type="checkbox"]:checked + label::before, .right-panel .candidate-listing .listing .role .listing-checkbox input[type="checkbox"]:checked + label::before {
+            content: '';
+            display: inline-block;
+            height: 12px;
+            width: 2px;
+            background: #fff;
+            position: absolute;
+            left: 11px;
+            transform: rotate(50deg);
+            top: 2px; }
+        .right-panel .candidate-listing .listing .name .name-details, .right-panel .candidate-listing .listing .company .name-details, .right-panel .candidate-listing .listing .role .name-details {
+          float: left; }
+          .right-panel .candidate-listing .listing .name .name-details p, .right-panel .candidate-listing .listing .company .name-details p, .right-panel .candidate-listing .listing .role .name-details p {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            max-width: 115px;
+            font-weight: bold; }
+          .right-panel .candidate-listing .listing .name .name-details span, .right-panel .candidate-listing .listing .company .name-details span, .right-panel .candidate-listing .listing .role .name-details span {
+            font-size: 12px;
+            color: #666; }
+      .right-panel .candidate-listing .listing .company {
+        font-weight: bold; }
+        .right-panel .candidate-listing .listing .company p {
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          width: 150px;
+          font-weight: normal; }
+      .right-panel .candidate-listing .listing .role {
+        font-weight: bold; }
+        .right-panel .candidate-listing .listing .role p {
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          width: 150px;
+          font-weight: normal; }
+      .right-panel .candidate-listing .listing .exp, .right-panel .candidate-listing .listing .ctc {
+        width: 5%;
+        float: left;
+        font-weight: bold; }
+        .right-panel .candidate-listing .listing .exp p, .right-panel .candidate-listing .listing .ctc p {
+          font-weight: normal; }
+      .right-panel .candidate-listing .listing .rest-details {
+        width: 42%;
+        float: left;
+        position: relative; }
+        .right-panel .candidate-listing .listing .rest-details p {
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          width: 350px; }
+          .right-panel .candidate-listing .listing .rest-details p span {
+            background: #eee;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 4px 5px;
+            margin: 0 2px;
+            display: inline-block; }
+            .right-panel .candidate-listing .listing .rest-details p span a {
+              color: #20a397;
+              font-weight: normal; }
+        .right-panel .candidate-listing .listing .rest-details a.messagebtn {
+          position: absolute;
+          top: 0;
+          right: 0;
+          background: #20a397;
+          color: #fff;
+          text-decoration: none;
+          font-size: 13px;
+          padding: 5px; }
+    .right-panel .candidate-listing .listing:first-child {
+      border: none; }
+
+@media (max-width: 767px) {
+  header .logo {
+    position: relative;
+    width: 100%; }
+    header .logo .navbar-toggle {
+      border-color: #333;
+      position: absolute;
+      left: 13px;
+      top: 7px; }
+      header .logo .navbar-toggle span.icon-bar {
+        background-color: #333; }
+  header .searchBar {
+    display: none; }
+
+  .content-wrapper {
+    top: 66px; }
+    .content-wrapper .left-panel {
+      display: none; }
+      .content-wrapper .left-panel .menu-links {
+        z-index: 3;
+        width: 100%; }
+    .content-wrapper .right-panel {
+      float: none;
+      width: 100%; }
+      .content-wrapper .right-panel .filter-div .filter-checkbox {
+        width: 20%;
+        margin-right: 5px; }
+      .content-wrapper .right-panel .filter-div .invite-tag {
+        width: 40%; }
+        .content-wrapper .right-panel .filter-div .invite-tag .moveto {
+          left: 0;
+          top: 0;
+          position: relative; }
+        .content-wrapper .right-panel .filter-div .invite-tag .share {
+          left: 0;
+          top: 0;
+          position: relative; }
+      .content-wrapper .right-panel .filter-div .withicon {
+        width: 16%;
+        height: 33px; }
+        .content-wrapper .right-panel .filter-div .withicon p {
+          display: none; }
+      .content-wrapper .right-panel .listing .name, .content-wrapper .right-panel .candidate-listing .listing .company, .content-wrapper .right-panel .candidate-listing .listing .role {
+        width: 45%; }
+        .content-wrapper .right-panel .listing .name .name-details p, .content-wrapper .right-panel .candidate-listing .listing .company .name-details p, .content-wrapper .right-panel .candidate-listing .listing .role .name-details p {
+          max-width: 90px; }
+      .content-wrapper .right-panel .listing .company {
+        display: none; }
+      .content-wrapper .right-panel .listing .role p {
+        width: 100px; }
+      .content-wrapper .right-panel .listing .exp p, .content-wrapper .right-panel .candidate-listing .listing .ctc p {
+        width: 40px; }
+      .content-wrapper .right-panel .listing .ctc {
+        display: none; }
+      .content-wrapper .right-panel .listing .rest-details p {
+        display: none; }
+      .content-wrapper .right-panel .listing .rest-details a.messagebtn {
+        top: 4px;
+        padding: 3px;
+        right: -53px; } }
+@media (min-width: 768px) and (max-width: 1023px) {
+  header .searchBar .searchDiv .location {
+    text-align: center; }
+    header .searchBar .searchDiv .location span.loc {
+      display: none; }
+    header .searchBar .searchDiv .location a {
+      float: none; }
+  header .searchBar .searchDiv .loggedInuser p {
+    display: none; }
+
+  .right-panel .filter-div .invite-tag {
+    width: 12%; } }
+@media (min-width: 1024px) and (max-width: 1177px) {
+  header .searchBar .searchDiv .location {
+    text-align: center; }
+    header .searchBar .searchDiv .location span.loc {
+      display: none; }
+    header .searchBar .searchDiv .location a {
+      float: none; } }
+
+/*# sourceMappingURL=style.css.map */

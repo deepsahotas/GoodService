@@ -1,0 +1,6 @@
+.sprite { background: url('../images/sprite.png') no-repeat top left; width: 16px; height: 16px; display: inline-block;}
+.sprite.downarrow { background-position: 0 0;position: absolute;top: 2px;right: -4px; transition: .2s ease-in-out;}
+.sprite.moveto { background-position: 0 -26px; position: absolute;left: 10px; top: 8px;}
+.sprite.rightarrow { background-position: 0 -52px; }
+.sprite.search { background-position: 0 -78px;position: absolute;top: 12px;left: 10px; opacity: 0.5; }
+.sprite.share { background-position: 0 -104px; width: 14px; position: absolute;left: 15px; top: 8px;}

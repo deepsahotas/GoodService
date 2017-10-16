@@ -1,0 +1,697 @@
+/*---importing partial---*/
+@import "./fonts";
+@import "./reset";
+@import "./sprite";
+/*---importing partial---*/
+
+$font-family:  Lato;
+$primary-color: #20a397;
+$secondry-color: #333;
+
+body {
+  font: 100% $font-family;
+  color: $secondry-color;
+  font-weight: 400;
+}
+p{
+  margin: 0;
+}
+
+h1,h2,h3,h4,h5,h6{
+  margin:0;
+}
+@mixin width($width) {
+  width: $width;
+}
+@mixin paddingsquare($padding) {
+  padding: $padding;
+}
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin border($border-width) {
+  border: $border-width solid #ccc;
+}
+@mixin border-color($border-color) {
+  border-color: $border-color;
+}
+@mixin primarybtn($primary-color,$fontcolor) {
+  background: $primary-color;
+  color: $fontcolor;
+}
+header{
+  border-bottom: 1px solid #ccc;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 4;
+  @include width(100%);
+  background: #f2f2f2;
+  .logo{
+    float: left;
+    @include width(18%);
+    text-align: center;
+    @include paddingsquare(13px);
+    a{
+      color: #333;
+      font-weight: bold;
+      font-size: 32px;
+      text-decoration: none;
+    }
+    a:hover{
+      text-decoration: none;
+    }
+    .mob-search{
+      display: none;
+      background-color: transparent;
+      background-image: -webkit-linear-gradient(top,rgba(255,255,255,.85),rgba(247,247,247,.85));
+      background-image: linear-gradient(top,rgba(255,255,255,.85),rgba(247,247,247,.85));
+      background-image: -webkit-linear-gradient(to bottom,rgba(255,255,255,.85),rgba(247,247,247,.85));
+      background-image: linear-gradient(to bottom,rgba(255,255,255,.85),rgba(247,247,247,.85));
+      position: absolute;
+      cursor: pointer;
+      top: 17px;
+      right: 10px;
+      height: 30px;
+      @include width(30px);
+      @include border(1px);
+      @include border-radius(3px);
+      span.mobilesearch{
+        right: 6px;
+        left: auto;
+        top: 6px;
+      }
+    }
+  }
+  .searchBar{
+    float: right;
+    @include width(82%);
+    @include  paddingsquare(13px);
+    .searchDiv{
+      position: relative;
+      input{
+        @include border(1px);
+        @include paddingsquare(10px);
+        @include width(50%);
+        padding-left: 32px;
+        float: left;
+        border-right: none;
+        background: #fff;
+        box-shadow: 0 2px 3px #ccc;
+      }
+      .location{
+        display: inline-block;
+        @include border(1px);
+        @include paddingsquare(10px);
+        padding-left: 15px;
+        padding-right: 15px;
+        float: left;
+        @include width(18%);
+        background: #fff;
+        box-shadow: 1px 2px 3px #ccc;
+        a{
+          color:$primary-color;
+          float: right;
+          padding-right: 15px;
+          position: relative;
+          cursor: pointer;
+        }
+        .city-dropdown{
+          margin: 10px -15px 0;
+          display: none;
+          @include width(100%);
+          max-width: 186px;
+          background: #fff;
+          @include border(1px);
+          box-shadow: 1px 2px 3px #ccc;
+          position: absolute;
+          border-top: none;
+          li{
+            display: block;
+            @include paddingsquare(7px);
+            padding-left: 15px;
+            cursor: pointer;
+            text-align: left;
+          }
+          li:hover{
+            @include primarybtn(#20a397,#fff);
+          }
+        }
+        a:hover{
+          text-decoration: none;
+        }
+      }
+      .location.dropdown a span.downarrow{
+        transform: rotate(180deg);
+      }
+      .location.dropdown .city-dropdown{
+        display: block;
+      }
+      button{
+        @include primarybtn(#20a397,#fff);
+        display: inline-block;
+        padding: 10px 25px;
+        font-size: 15px;
+        padding-bottom: 11px;
+        box-shadow: 0px 2px 3px #ccc;
+      }
+      .loggedInuser{
+        float: right;
+        @include paddingsquare(2px);
+        padding-right: 15px;
+        cursor: pointer;
+        p{
+          display: inline-block;
+          float: left;
+          margin: 10px 4px 0 0;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          @include width(62px);
+          padding-right: 10px;
+          overflow: hidden;
+        }
+        img{
+          width: 40px;
+          height: 40px;
+          @include border-radius(100%);
+          @include border(2px);
+          @include border-color(#fff);
+          float: right;
+        }
+        .loogedarrow{
+          top: 13px;
+        }
+      }
+    }
+  }
+}
+header::after,.content-wrapper::after,.filter-div::after,.candidate-listing::after,.listing-header::after,.listing::after{
+  content: '';
+  clear: both;
+  display: block;
+}
+.content-wrapper{
+  position: relative;
+  top: 71px;
+  .left-panel{
+    float: left;
+    .menu-links{
+      position: fixed;
+      @include width(19%);
+      height: 100%;
+      background: #f2f2f2;
+      @include paddingsquare(25px);
+      border-right: 2px solid #ccc;
+      box-shadow: 0 0 3px #ccc;
+      .menus{
+        margin-bottom: 20px;
+        h2{
+          font-size: 16px;
+          font-weight: bold;
+          margin-bottom: 10px;
+          text-transform: uppercase;
+          border-bottom: 1px dotted #ccc;
+          padding-bottom: 10px;
+        }
+        ul{
+          margin: 0 15px;
+          li{
+            display: block;
+            margin: 10px 0;
+            text-transform: capitalize;
+            a{
+              color: $secondry-color;
+              text-decoration: none;
+            }
+            a:hover{
+              color: $primary-color;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.right-panel{
+  float: right;
+  @include width(81%);
+  .filter-div{
+    background: #f2f2f2;
+    position: fixed;
+    @include width(100%);
+    padding: 10px 15px;
+    box-shadow: 0 3px 3px #ccc;
+    z-index: 2;
+    .filter-checkbox{
+      @include border(1px);
+      @include border-radius(2px);
+      @include width(6%);
+      display: inline-block;
+      margin-right: 15px;
+      background-color: transparent;
+      background-image: -webkit-linear-gradient(top,rgba(255,255,255,.85),rgba(247,247,247,.85));
+      background-image: linear-gradient(top,rgba(255,255,255,.85),rgba(247,247,247,.85));
+      background-image: -webkit-linear-gradient(to bottom,rgba(255,255,255,.85),rgba(247,247,247,.85));
+      background-image: linear-gradient(to bottom,rgba(255,255,255,.85),rgba(247,247,247,.85));
+      padding-left: 9px;
+      padding-top: 6px;
+      padding-bottom: 2px;
+      float: left;
+      input[type="checkbox"]{
+        display: none;
+      }
+      p{
+        position: relative;
+      }
+      .filter-checkbox:hover{
+        @include border-color(#333);
+      }
+      label{
+        @include border(1px);
+        @include width(20px);
+        height: 20px;
+        display: inline-block;
+        margin: 0 auto;
+        position: relative;
+      }
+      input[type="checkbox"]:checked + label{
+        background: $primary-color;
+        @include border-color($primary-color);
+      }
+      input[type="checkbox"]:checked + label::after{
+        content: '';
+        display: inline-block;
+        height: 7px;
+        width: 2px;
+        background: #fff;
+        position: absolute;
+        left: 4px;
+        transform: rotate(-40deg);
+        top: 7px;
+      }
+      input[type="checkbox"]:checked + label::before{
+        content: '';
+        display: inline-block;
+        height: 12px;
+        width: 2px;
+        background: #fff;
+        position: absolute;
+        left: 11px;
+        transform: rotate(50deg);
+        top: 2px;
+      }
+      .filterarrow{
+        position: relative;
+        top: -1px;
+        right: -8px;
+      }
+    }
+    .invite-tag{
+      @include width(10%);
+      @include paddingsquare(7px);
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+    }
+  }
+  .candidate-listing{
+    background: #fff;
+    padding: 0 15px;
+    position: relative;
+    top: 58px;
+    z-index: 1;
+    max-height: 545px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    .listing{
+      padding: 6px 15px;
+      margin: 0 -15px;
+      border-top: 1px solid #ccc;
+        .name{
+          @include width(16%);
+          float: left;
+          .listing-checkbox{
+            float: left;
+            padding: 7px 10px;
+            input[type="checkbox"]{
+              display: none;
+            }
+            label{
+              @include border(1px);
+              @include width(20px);
+              height: 20px;
+              display: inline-block;
+              margin: 0 auto;
+              position: relative;
+            }
+            input[type="checkbox"]:checked + label{
+              background: $primary-color;
+              @include border-color($primary-color);
+            }
+            input[type="checkbox"]:checked + label::after{
+              content: '';
+              display: inline-block;
+              height: 7px;
+              width: 2px;
+              background: #fff;
+              position: absolute;
+              left: 4px;
+              transform: rotate(-40deg);
+              top: 7px;
+            }
+            input[type="checkbox"]:checked + label::before{
+              content: '';
+              display: inline-block;
+              height: 12px;
+              width: 2px;
+              background: #fff;
+              position: absolute;
+              left: 11px;
+              transform: rotate(50deg);
+              top: 2px;
+            }
+          }
+          .name-details{
+            float: left;
+            p{
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+              max-width: 115px;
+              font-weight: bold;
+            }
+            span{
+              font-size: 12px;
+              color: #666;
+            }
+          }
+        }
+        .company{
+          @extend .name;
+          font-weight: bold;
+          p{
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 150px;
+            font-weight: normal;
+          }
+        }
+        .role{
+          @extend .name;
+          font-weight: bold;
+          p{
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 150px;
+            font-weight: normal;
+          }
+        }
+        .exp{
+          @include width(5%);
+          float: left;
+          font-weight: bold;
+          p{
+            font-weight: normal;
+          }
+        }
+        .ctc{
+          @extend .exp;
+        }
+        .rest-details{
+          @include width(42%);
+          float: left;
+          position: relative;
+          p{
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 350px;
+            span{
+              background: #eee;
+              font-size: 12px;
+              font-weight: bold;
+              padding: 4px 5px;
+              margin: 0 2px;
+              display: inline-block;
+              a{
+                color: $primary-color;
+                font-weight: normal;
+              }
+            }
+          }
+          a.messagebtn{
+            position: absolute;
+            top: 0;
+            right: 0;
+            @include primarybtn(#20a397,#fff);
+            text-decoration: none;
+            font-size: 13px;
+            @include paddingsquare(5px);
+          }
+        }
+      }
+      .listing:first-child{
+        border: none;
+      }
+  }
+}
+
+
+@media  (max-width: 767px) {
+  header{
+    .logo{
+      position: relative;
+      @include width(100%);
+      .navbar-toggle{
+        @include border-color(#333);
+        position: absolute;
+        left: 13px;
+        top: 7px;
+        span.icon-bar{
+          background-color: #333;
+        }
+      }
+      .mob-search{
+        display: block;
+      }
+    }
+    .searchBar{
+      display: block;
+      float:none;
+      clear: both;
+      @include width(100%);
+      .searchDiv{
+        .location{
+          text-align: center;
+          @include width(50%);
+          a{
+            float: none;
+          }
+          span.loc{
+            display: none;
+          }
+        }
+        .loggedInuser{
+          display: none;
+        }
+      }
+      button{
+        @include width(100%);
+        margin-top: 10px;
+      }
+    }
+  }
+  .content-wrapper{
+    top: 66px;
+    .left-panel{
+      display: none;
+      .menu-links{
+        z-index: 3;
+        @include width(100%);
+      }
+    }
+    .right-panel{
+      float: none;
+      @include width(100%);
+      .filter-div{
+        .filter-checkbox{
+          @include width(20%);
+          margin-right: 5px;
+        }
+        .invite-tag{
+          @include width(40%);
+          .moveto{
+            left: 0;
+            top: 0;
+            position: relative;
+          }
+          .share{
+            left: 0;
+            top: 0;
+            position: relative;
+          }
+        }
+        .withicon{
+          @include width(16%);
+          height: 33px;
+          p{
+            display: none;
+          }
+        }
+      }
+      .listing{
+        .name{
+          width: 45%;
+          .name-details{
+            p{
+              max-width: 90px;
+            }
+          }
+        }
+        .company{
+          display: none;
+        }
+        .role{
+          p{
+            @include width(100px);
+          }
+        }
+        .exp{
+          p{
+            @include width(40px);
+          }
+        }
+        .ctc{
+          display: none;
+        }
+        .rest-details{
+          p{
+            display: none;
+          }
+          a.messagebtn{
+            top: 4px;
+            padding: 3px;
+            right: -53px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width:768px) and (max-width:1023px) {
+  header{
+    .logo{
+      @include width(28%);
+    }
+    .searchBar{
+      @include width(72%);
+      .searchDiv{
+        input{
+          @include width(35%);
+        }
+        .location{
+          text-align: center;
+          width: 24%;
+            span.loc{
+              display: none;
+            }
+            a{
+              float: none;
+            }
+        }
+        button{
+          padding-left: 12px;
+          padding-right: 12px;
+        }
+        .loggedInuser{
+            p{
+              display: none;
+            }
+        }
+      }
+    }
+  }
+  .content-wrapper{
+    .left-panel{
+      .menu-links{
+        @include width(30%);
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+  }
+  .right-panel{
+    @include width(70%);
+    .candidate-listing{
+      .listing{
+        .company{
+          @include width(25%);
+          word-wrap: break-word;
+          padding-right: 5px;
+          p{
+            @include width(auto);
+            white-space: normal;
+          }
+        }
+        .role{
+          @include width(25%);
+          word-wrap: break-word;
+          padding-right: 5px;
+          p{
+            @include width(auto);
+            white-space: normal;
+          }
+        }
+        .rest-details{
+          @include width(100%);
+          padding-top: 10px;
+          clear: both;
+          p{
+            @include width(auto);
+            white-space: normal;
+            span{
+              margin-bottom: 2px;
+            }
+          }
+          a.messagebtn{
+            top: 5px;
+          }
+        }
+      }
+    }
+    .filter-div{
+      .invite-tag{
+        @include width(12%);
+      }
+    }
+  }
+}
+@media (min-width:1024px) and (max-width:1177px){
+  header{
+    .searchBar{
+      .searchDiv{
+        .location{
+          text-align: center;
+            span.loc{
+              display: none;
+            }
+            a{
+              float: none;
+            }
+        }
+        .loggedInuser{
+          p{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
